@@ -103,7 +103,7 @@ function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-gray-200 bg-[#fbfbfb]/80 backdrop-blur-md">
       <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
-        <Link href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center">
           <Image
             src="/Mercel-Logo.png"
             alt="Mercel Logo"
@@ -114,21 +114,12 @@ function Navbar() {
           />
         </Link>
         <nav className="hidden md:flex gap-8">
-          <Link href="/" className="text-sm font-medium text-gray-700 hover:text-blue-600">
-            Home
-          </Link>
-          <Link href="/products" className="text-sm font-medium text-gray-700 hover:text-blue-600">
-            Products
-          </Link>
-          <Link href="/samples" className="text-sm font-medium text-gray-700 hover:text-blue-600">
-            Free Samples
-          </Link>
-          <Link href="/services" className="text-sm font-medium text-gray-700 hover:text-blue-600">
-            Services
-          </Link>
-          <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-blue-600">
-            About
-          </Link>
+          <Link href="/" className="text-sm font-medium text-gray-700 hover:text-blue-600">Home</Link>
+          <Link href="/products" className="text-sm font-medium text-gray-700 hover:text-blue-600">Products</Link>
+          <Link href="/samples" className="text-sm font-medium text-gray-700 hover:text-blue-600">Free Samples</Link>
+          <Link href="/services" className="text-sm font-medium text-gray-700 hover:text-blue-600">Services</Link>
+          <Link href="/about" className="text-sm font-medium text-gray-700 hover:text-blue-600">About</Link>
+          <Link href="/contact" className="text-sm font-medium text-gray-700 hover:text-blue-600">Contact</Link>
         </nav>
         <Link
           href="/samples"
