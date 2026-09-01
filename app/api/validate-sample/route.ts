@@ -1,15 +1,8 @@
 import { NextRequest, NextResponse } from "next/server";
+import { kv } from "@vercel/kv";
+import { Readable } from "stream";
 import fs from "fs";
 import path from "path";
-import { Readable } from "stream";
-
-const TOKEN_FILE = path.join(process.cwd(), "data", "tokens.json");
-const SAMPLES_DIR = path.join(process.cwd(), "public", "samples");
-
-function readTokens() {
-  if (!fs.existsSync(TOKEN_FILE)) return {};
-  return JSON.parse(fs.readFileSync(TOKEN_FILE, "utf8"));
-}
 
 export async function GET(request: NextRequest) {
   const url = new URL(request.url);
@@ -20,29 +13,15 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Missing token/sample" }, { status: 400 });
   }
 
-  const tokens = readTokens();
-  const record = tokens[token];
+  const record = await kv.get(token);
 
-  if (!record) {
-    return NextResponse.json({ error: "Invalid or expired token" }, { status: 404 });
+  if (!record || record.used || Date.now() > (record.expiresAt || 0)) {
+    return NextResponse.json({ error: "Invalid or expired link" }, { status: 404 });
   }
 
-  if (record.used) {
-    return NextResponse.json({ error: "Token already used" }, { status: 410 });
-  }
+  await kv.set(token, { ...record, used: true }, { ex: 60 * 60 * 24 });
 
-  if (Date.now() > record.expiresAt) {
-    delete tokens[token];
-    writeTokens(tokens);
-    return NextResponse.json({ error: "Token expired" }, { status: 410 });
-  }
-
-  // Mark as used (single-use)
-  tokens[token].used = true;
-  writeTokens(tokens);
-
-  // Serve the file
-  const filePath = path.join(SAMPLES_DIR, `${sample}.pdf`);
+  const filePath = path.join(process.cwd(), "public", "samples", `${sample}.pdf`);
   if (!fs.existsSync(filePath)) {
     return NextResponse.json({ error: "File not found" }, { status: 404 });
   }
