@@ -21,11 +21,11 @@ const handleSubmit = async (e: React.FormEvent) => {
   if (!selectedSample) return;
   setSubmitting(true);
 
-  const response = await fetch("https://formspree.io/f/xppzppql", {
+  const response = await fetch("/api/send-sample", {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      ...formData,
+      email,
       sample: selectedSample.title,
     }),
   });
