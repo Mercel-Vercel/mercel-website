@@ -9,6 +9,8 @@ interface Sample {
 }
 
 export default function SamplesPage() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [selectedSample, setSelectedSample] = useState<Sample | null>(null);
   const [submitted, setSubmitted] = useState(false);
@@ -20,7 +22,12 @@ export default function SamplesPage() {
     const response = await fetch("/api/send-sample", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, sample: selectedSample.title }),
+      body: JSON.stringify({
+        firstName,
+        lastName,
+        email,
+        sample: selectedSample.title,
+      }),
     });
 
     if (response.ok) setSubmitted(true);
@@ -32,7 +39,7 @@ export default function SamplesPage() {
         <div className="max-w-7xl mx-auto px-4 text-center">
           <h1 className="text-4xl font-bold text-gray-900">Free Samples & Reports</h1>
           <p className="mt-4 text-lg text-gray-600">
-            Choose a sample, enter your email, and we'll send the download link instantly.
+            Choose a sample, enter your details, and we'll send the download link instantly.
           </p>
         </div>
       </section>
@@ -60,8 +67,32 @@ export default function SamplesPage() {
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 p-4">
           <div className="w-full max-w-md rounded-xl bg-white p-8 shadow-xl">
             <h2 className="text-2xl font-bold text-gray-900">Get: {selectedSample.title}</h2>
-            <p className="mt-2 text-sm text-gray-600">Enter your email and we'll send you the download link.</p>
+            <p className="mt-2 text-sm text-gray-600">Enter your details and we'll send the download link.</p>
             <form onSubmit={handleSubmit} className="mt-6 space-y-4">
+              <div className="grid grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">First Name</label>
+                  <input
+                    type="text"
+                    required
+                    value={firstName}
+                    onChange={(e) => setFirstName(e.target.value)}
+                    className="w-full rounded-lg border border-gray-300 px-4 py-3"
+                    placeholder="John"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700">Last Name</label>
+                  <input
+                    type="text"
+                    required
+                    value={lastName}
+                    onChange={(e) => setLastName(e.target.value)}
+                    className="w-full rounded-lg border border-gray-300 px-4 py-3"
+                    placeholder="Doe"
+                  />
+                </div>
+              </div>
               <div>
                 <label className="block text-sm font-medium text-gray-700">Email</label>
                 <input
