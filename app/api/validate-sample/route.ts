@@ -4,6 +4,13 @@ import { Readable } from "stream";
 import fs from "fs";
 import path from "path";
 
+interface TokenRecord {
+  email: string;
+  sample: string;
+  expiresAt: number;
+  used: boolean;
+}
+
 export async function GET(request: NextRequest) {
   const url = new URL(request.url);
   const token = url.searchParams.get("token");
@@ -13,7 +20,7 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Missing token/sample" }, { status: 400 });
   }
 
-  const record = await kv.get(token);
+  const record = (await kv.get(token)) as TokenRecord | null;
 
   if (!record || record.used || Date.now() > (record.expiresAt || 0)) {
     return NextResponse.json({ error: "Invalid or expired link" }, { status: 404 });
