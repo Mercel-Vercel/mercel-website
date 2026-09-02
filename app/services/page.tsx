@@ -3,6 +3,10 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 
+export const metadata: Metadata = {
+  title: "Privacy-First AI Automation Services | Mercel",
+  description: "Custom AI automation systems, document processing, and B2B solutions. Your data never leaves your servers.",
+};
 export default function ServicesPage() {
   return (
     <main className="min-h-screen bg-[#fbfbfb]">
