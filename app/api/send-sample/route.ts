@@ -14,7 +14,7 @@ export async function POST(request: NextRequest) {
   const token = crypto.randomUUID().replace(/-/g, "");
   const expiresAt = Date.now() + 24 * 60 * 60 * 1000;
 
-  await kv.set(token, { email, sample, used: false }, { ex: 60 * 60 * 24 });
+  await kv.set(token, { email, sample, expiresAt, used: false }, { ex: 60 * 60 * 24 });
 
   const baseUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://mercel-vercel.vercel.app";
   const downloadLink = `${baseUrl}/api/validate-sample?token=${token}&sample=${sample}`;
