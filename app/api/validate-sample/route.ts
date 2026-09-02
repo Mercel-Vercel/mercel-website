@@ -1,14 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
-import { kv } from "@vercel/kv";
+import { Redis } from "@upstash/redis";
 import fs from "fs";
 import path from "path";
 
-interface TokenRecord {
-  email: string;
-  sample: string;
-  expiresAt: number;
-  used: boolean;
-}
+const redis = new Redis({
+  url: process.env.UPSTASH_REDIS_KV_REST_API_URL!,
+  token: process.env.UPSTASH_REDIS_KV_REST_API_TOKEN!,
+});
 
 export async function GET(request: NextRequest) {
   const url = new URL(request.url);
@@ -19,15 +17,19 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: "Missing token/sample" }, { status: 400 });
   }
 
-  // Use type assertion to tell TypeScript the shape of the record
-  const record = (await kv.get(token)) as TokenRecord | null;
+  const rawRecord = await redis.get(token);
+  if (!rawRecord) {
+    return NextResponse.json({ error: "Invalid or expired link" }, { status: 404 });
+  }
 
-  if (!record || record.used || Date.now() > (record.expiresAt || 0)) {
+  const record = JSON.parse(rawRecord as string);
+
+  if (record.used || Date.now() > (record.expiresAt || 0)) {
     return NextResponse.json({ error: "Invalid or expired link" }, { status: 404 });
   }
 
   // Mark as used (single-use)
-  await kv.set(token, { ...record, used: true }, { ex: 60 * 60 * 24 });
+  await redis.set(token, JSON.stringify({ ...record, used: true }), { ex: 60 * 60 * 24 });
 
   // Serve the file
   const filePath = path.join(process.cwd(), "public", "samples", `${sample}.pdf`);
@@ -36,7 +38,6 @@ export async function GET(request: NextRequest) {
   }
 
   const fileBuffer = fs.readFileSync(filePath);
-  // Convert Buffer to Uint8Array (compatible with BodyInit)
   const body = new Uint8Array(fileBuffer);
 
   return new NextResponse(body, {
