@@ -36,6 +36,9 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Mercel", url: "https://mercel-vercel.vercel.app" }],
   creator: "Mercel",
+  verification: {
+  google: "RcGyxeCyhSurPPUZP5ATFI7XsWfVjTPlGkAiv55vqiQ",
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
