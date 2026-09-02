@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Business Solution Reports & Digital Products | Mercel",
   description: "Download premium business solution reports, coding templates, and AI guides. Privacy-first products that keep your data on your servers.",
-  keywords: ["business solution reports", "digital products", "AI guides", "coding templates", "privacy-first"],
+  keywords: ["business solution reports", "research papers", "RAG pipeline Architecture", "web templates", "digital products", "AI guides", "lead generation guide", "coding templates", "privacy-first"],
 };
 export default function ProductsPage() {
   return (
