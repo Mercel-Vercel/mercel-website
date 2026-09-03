@@ -65,10 +65,10 @@ export default function ProductsPage() {
 
 const products = [
   {
-    title: "The Privacy-First AI Playbook",
-    description: "How to Automate Your Business Without Cloud Dependency. Complete guide with implementation steps.",
-    price: 9,
-    link: "/products/privacy-first-ai-playbook",
+    title: "The Automated Lead Generator",
+    description: "A Complete Guide to Building Your Own Privacy-First AI Marketing System.",
+    price: 45,
+    link: "/products/automated-lead-generator",
   },
   {
     title: "AI-Powered Lead Qualification System",
