@@ -139,7 +139,7 @@ export default function SamplesPage() {
 }
 
 const samples: Sample[] = [
-  { title: "Privacy-First AI Playbook (Sample)", description: "Chapter 1: Why Your Business Should Stop Using Cloud AI", fileUrl: "/samples/privacy-first-ai-sample.pdf" },
+  { title: "Privacy-First-Ai-Playbook", description: "The complete 10-chapter guide to localized AI for business automation.", fileUrl: "/samples/Privacy-First-Ai-Playbook.pdf" },
   { title: "Business Automation Checklist", description: "Identify 10 processes you can automate this week.", fileUrl: "/samples/automation-checklist.pdf" },
-  { title: "Local AI Setup Guide (Sample)", description: "How to install and run a local LLM.", fileUrl: "/samples/local-ai-setup-sample.pdf" },
+  { title: "Local AI Setup Guide", description: "How to install and run a local LLM.", fileUrl: "/samples/local-ai-setup-sample.pdf" },
 ];
