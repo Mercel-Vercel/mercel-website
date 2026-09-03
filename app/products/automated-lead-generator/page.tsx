@@ -28,7 +28,7 @@ export default function AutomatedLeadGeneratorPage() {
         <div className="mt-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">What's Inside</h2>
           <ul className="list-disc pl-5 text-gray-600">
-            <li>Full 10,000-word guide with step-by-step instructions</li>
+            <li>Full 20 page guide with step-by-step instructions</li>
             <li>Hardware selection and software setup</li>
             <li>All account configurations explained</li>
             <li>Automation workflows for lead generation</li>
