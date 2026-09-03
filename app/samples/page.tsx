@@ -141,4 +141,4 @@ export default function SamplesPage() {
 const samples: Sample[] = [
   { title: "Privacy-First-Ai-Playbook", description: "The complete 10-chapter guide to localized AI for business automation.", fileUrl: "/samples/Privacy-First-Ai-Playbook.pdf" },
   { title: "Ai-Powered-Customer-Service-Handbook", description: "The complete 10-chapter guide to AI-powered customer service for small businesses.", fileUrl: "/samples/Ai-Powered-Customer-Service-Handbook.pdf" },
-  { title: "The-Small-Business-Content-Playbook", description: "The complete 11-chapter guide to creating engaging content that drives growth—without a marketing team.", fileUrl: "/samples/The-Small-Business-Content-Playbook.pdf" },
+  { title: "The-Small-Business-Content-Playbook", description: "The complete 11-chapter guide to creating engaging content that drives growth—without a marketing team.", fileUrl: "/samples/The-Small-Business-Content-Playbook.pdf", },
