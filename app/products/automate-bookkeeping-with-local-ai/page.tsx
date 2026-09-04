@@ -1,6 +1,25 @@
+"use client";
+
+import { useState } from "react";
 import Link from "next/link";
 
 export default function AutomateBookkeepingWithLocalAIPage() {
+  const [loading, setLoading] = useState(false);
+
+  const handleCheckout = async () => {
+    setLoading(true);
+    const response = await fetch("/api/checkout", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+    });
+    const data = await response.json();
+    if (data.url) {
+      window.location.href = data.url;
+    } else {
+      setLoading(false);
+    }
+  };
+
   return (
     <main className="min-h-screen bg-[#fbfbfb] py-16">
       <div className="max-w-4xl mx-auto px-4">
@@ -14,14 +33,13 @@ export default function AutomateBookkeepingWithLocalAIPage() {
           <p className="text-3xl font-bold text-gray-900 mb-4">$27.00</p>
           <p className="text-gray-600 mb-6">Instant download. PDF format.</p>
           
-         <a
-            href="https://buy.stripe.com/cNi6oHaKMbPKbQP6oTgYU02"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="block w-full text-center rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white hover:bg-blue-700"
+          <button
+            onClick={handleCheckout}
+            disabled={loading}
+            className="block w-full text-center rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white hover:bg-blue-700 disabled:bg-gray-400"
           >
-            Buy Now with Stripe
-          </a>
+            {loading ? "Redirecting..." : "Buy Now with Stripe"}
+          </button>
         </div>
         
         <div className="mt-8">
