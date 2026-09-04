@@ -78,9 +78,9 @@ const products = [
   },
   {
     title: "Automate Bookkeeping with Local AI",
-    description: "Detailed guide to setting up local AI for bookkeeping and financial tasks.",
-    price: 9,
-    link: "/products/local-ai-bookkeeping",
+    description: "A comprehensive guide to building your own private, tax-ready financial system. Replace QuickBooks and ChatGPT with a local AI solution that keeps your data on your hardware.",
+    price: 27,
+    link: "/products/automate-bookkeeping-with-local-ai",
   },
   {
     title: "Custom AI Agent Setup Guide",
