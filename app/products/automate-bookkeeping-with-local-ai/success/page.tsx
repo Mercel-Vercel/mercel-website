@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-export default function AutomatedLeadGeneratorSuccessPage() {
+export default function AutomateBookeepingWithLocalAiSuccessPage() {
   const [status, setStatus] = useState("loading");
   const [downloadUrl, setDownloadUrl] = useState("");
 
@@ -17,7 +17,7 @@ export default function AutomatedLeadGeneratorSuccessPage() {
         .then((data) => {
           if (data.verified) {
             setStatus("verified");
-            setDownloadUrl("/The-Automated-Lead-Generator.pdf");
+            setDownloadUrl("/Automate-Bookeeping-with-Local-Ai.pdf");
           } else {
             setStatus("failed");
           }
