@@ -3,31 +3,34 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const handleCheckout = async () => {
-  setLoading(true);
-  try {
-    const response = await fetch("/api/checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        productName: "Automate Bookkeeping with Local AI",
-        description: "A Comprehensive Guide to Building Your Own Private, Tax-Ready Financial System.",
-        amount: 2700, // $27.00 in cents
-        successUrl: `${window.location.origin}/products/automate-bookkeeping-with-local-ai/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancelUrl: `${window.location.origin}/products/automate-bookkeeping-with-local-ai`,
-      }),
-    });
+export default function AutomateBookkeepingWithLocalAIPage() {
+  const [loading, setLoading] = useState(false);
 
-    const data = await response.json();
-    if (!response.ok) throw new Error(data.error || "Checkout failed");
-    if (data.url) window.location.href = data.url;
-    else throw new Error("No checkout URL returned");
-  } catch (error) {
-    console.error(error);
-    alert(error.message);
-    setLoading(false);
-  }
-};
+  const handleCheckout = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          productName: "Automate Bookkeeping with Local AI",
+          description: "A Comprehensive Guide to Building Your Own Private, Tax-Ready Financial System.",
+          amount: 2700, // $27.00 in cents
+          successUrl: `${window.location.origin}/products/automate-bookkeeping-with-local-ai/success?session_id={CHECKOUT_SESSION_ID}`,
+          cancelUrl: `${window.location.origin}/products/automate-bookkeeping-with-local-ai`,
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Checkout failed");
+      if (data.url) window.location.href = data.url;
+      else throw new Error("No checkout URL returned");
+    } catch (error) {
+      console.error(error);
+      alert(error.message);
+      setLoading(false);
+    }
+  };
 
   return (
     <main className="min-h-screen bg-[#fbfbfb] py-16">
