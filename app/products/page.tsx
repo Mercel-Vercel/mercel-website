@@ -73,7 +73,7 @@ const products = [
   {
     title: "AI-Powered Second-BrainOS",
     description: "A comprehensive guide to building your own private knowledge system with local AI. Capture, organize, distill, and express using the CODE method. No cloud required.",
-    price: 45,
+    price: 18,
     link: "/products/ai-powered-second-brain-os",
   },
   {
