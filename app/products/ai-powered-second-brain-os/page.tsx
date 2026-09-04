@@ -6,31 +6,31 @@ import Link from "next/link";
 export default function AIPoweredSecondBrainPage() {
   const [loading, setLoading] = useState(false);
 
-const handleCheckout = async () => {
-  setLoading(true);
-  try {
-    const response = await fetch("/api/checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        productName: "The AI-Powered Second Brain",
-        description: "A Complete Guide to Building Your Own Private Knowledge System with Local AI.",
-        amount: 1800, // $18.00 in cents
-        successUrl: `${window.location.origin}/products/ai-powered-second-brain-os/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancelUrl: `${window.location.origin}/products/ai-powered-second-brain-os`,
-      }),
-    });
+  const handleCheckout = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          productName: "The AI-Powered Second Brain",
+          description: "A Complete Guide to Building Your Own Private Knowledge System with Local AI.",
+          amount: 1800, // $18.00 in cents
+          successUrl: `${window.location.origin}/products/ai-powered-second-brain-os/success?session_id={CHECKOUT_SESSION_ID}`,
+          cancelUrl: `${window.location.origin}/products/ai-powered-second-brain-os`,
+        }),
+      });
 
-    const data = await response.json();
-    if (!response.ok) throw new Error(data.error || "Checkout failed");
-    if (data.url) window.location.href = data.url;
-    else throw new Error("No checkout URL returned");
-  } catch (error) {
-    console.error(error);
-    alert(error.message);
-    setLoading(false);
-  }
-};
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Checkout failed");
+      if (data.url) window.location.href = data.url;
+      else throw new Error("No checkout URL returned");
+    } catch (error) {
+      console.error(error);
+      alert(error.message);
+      setLoading(false);
+    }
+  };
 
   return (
     <main className="min-h-screen bg-[#fbfbfb] py-16">
