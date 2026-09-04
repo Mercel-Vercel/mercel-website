@@ -65,7 +65,7 @@ export default function AiPoweredSecondBrainOSSuccessPage() {
       <div className="max-w-2xl mx-auto px-4 text-center">
         <h1 className="text-3xl font-bold text-red-800 mb-4">Payment Not Verified</h1>
         <p className="text-gray-600 mb-8">We couldn't confirm your payment. Please contact support or try again.</p>
-        <Link href="/products/automated-lead-generator" className="inline-block text-blue-600 hover:underline">
+        <Link href="/products/ai-powered-second-brain-os" className="inline-block text-blue-600 hover:underline">
           ← Try Again
         </Link>
       </div>
