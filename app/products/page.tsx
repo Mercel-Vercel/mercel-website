@@ -72,7 +72,7 @@ const products = [
   },
   {
     title: "AI-Powered Second-BrainOS",
-    description: "The complete Second Brain system: Ebook + Ready-to-Use App & Template. Capture, organize, and express your knowledge with optional local AI. No cloud required.",
+    description: "Ebook + App bundle. Learn the Second Brain methodology and get a working knowledge management app with optional local AI. All data stays on your devices.",
     price: 45,
     link: "/products/ai-powered-second-brain-os",
   },
