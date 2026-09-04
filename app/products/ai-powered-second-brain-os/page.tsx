@@ -6,8 +6,9 @@ import Link from "next/link";
 export default function AIPoweredSecondBrainPage() {
   const [loading, setLoading] = useState(false);
 
-  const handleCheckout = async () => {
-    setLoading(true);
+const handleCheckout = async () => {
+  setLoading(true);
+  try {
     const response = await fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -19,13 +20,17 @@ export default function AIPoweredSecondBrainPage() {
         cancelUrl: `${window.location.origin}/products/ai-powered-second-brain-os`,
       }),
     });
+
     const data = await response.json();
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
-      setLoading(false);
-    }
-  };
+    if (!response.ok) throw new Error(data.error || "Checkout failed");
+    if (data.url) window.location.href = data.url;
+    else throw new Error("No checkout URL returned");
+  } catch (error) {
+    console.error(error);
+    alert(error.message);
+    setLoading(false);
+  }
+};
 
   return (
     <main className="min-h-screen bg-[#fbfbfb] py-16">
