@@ -1,11 +1,16 @@
 import { NextRequest, NextResponse } from "next/server";
 
-const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY!;
+const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY;
 
 export async function POST(request: NextRequest) {
   try {
+    if (!STRIPE_SECRET_KEY) {
+      return NextResponse.json({ error: "Stripe secret key not configured" }, { status: 500 });
+    }
+
     const { productName, description, amount, successUrl, cancelUrl } = await request.json();
 
+    // Validate required fields
     if (!productName || !amount || !successUrl || !cancelUrl) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
@@ -23,7 +28,7 @@ export async function POST(request: NextRequest) {
               name: productName,
               description: description || "",
             },
-            unit_amount: amount, // Price in cents (e.g., 2700 = $27.00)
+            unit_amount: amount,
           },
           quantity: 1,
         },
