@@ -3,31 +3,34 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const handleCheckout = async () => {
-  setLoading(true);
-  try {
-    const response = await fetch("/api/checkout", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        productName: "The Automated Lead Generator",
-        description: "A Complete Guide to Building Your Own Privacy-First AI Marketing System.",
-        amount: 4500, // $45.00 in cents
-        successUrl: `${window.location.origin}/products/automated-lead-generator/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancelUrl: `${window.location.origin}/products/automated-lead-generator`,
-      }),
-    });
+export default function AutomatedLeadGeneratorPage() {
+  const [loading, setLoading] = useState(false);
 
-    const data = await response.json();
-    if (!response.ok) throw new Error(data.error || "Checkout failed");
-    if (data.url) window.location.href = data.url;
-    else throw new Error("No checkout URL returned");
-  } catch (error) {
-    console.error(error);
-    alert(error.message);
-    setLoading(false);
-  }
-};
+  const handleCheckout = async () => {
+    setLoading(true);
+    try {
+      const response = await fetch("/api/checkout", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          productName: "The Automated Lead Generator",
+          description: "A Complete Guide to Building Your Own Privacy-First AI Marketing System.",
+          amount: 4500, // $45.00 in cents
+          successUrl: `${window.location.origin}/products/automated-lead-generator/success?session_id={CHECKOUT_SESSION_ID}`,
+          cancelUrl: `${window.location.origin}/products/automated-lead-generator`,
+        }),
+      });
+
+      const data = await response.json();
+      if (!response.ok) throw new Error(data.error || "Checkout failed");
+      if (data.url) window.location.href = data.url;
+      else throw new Error("No checkout URL returned");
+    } catch (error) {
+      console.error(error);
+      alert(error.message);
+      setLoading(false);
+    }
+  };
 
   return (
     <main className="min-h-screen bg-[#fbfbfb] py-16">
