@@ -3,7 +3,7 @@
 import { useEffect, useState } from "react";
 import Link from "next/link";
 
-export default function BookkeepingSuccessPage() {
+export default function AutomatedLeadGeneratorSuccessPage() {
   const [status, setStatus] = useState("loading");
   const [downloadUrl, setDownloadUrl] = useState("");
 
@@ -17,7 +17,7 @@ export default function BookkeepingSuccessPage() {
         .then((data) => {
           if (data.verified) {
             setStatus("verified");
-            setDownloadUrl("/Automate-Bookkeeping-with-Local-AI.pdf");
+            setDownloadUrl("/The-Automated-Lead-Generator.pdf");
           } else {
             setStatus("failed");
           }
@@ -65,7 +65,7 @@ export default function BookkeepingSuccessPage() {
       <div className="max-w-2xl mx-auto px-4 text-center">
         <h1 className="text-3xl font-bold text-red-800 mb-4">Payment Not Verified</h1>
         <p className="text-gray-600 mb-8">We couldn't confirm your payment. Please contact support or try again.</p>
-        <Link href="/products/automate-bookkeeping-with-local-ai" className="inline-block text-blue-600 hover:underline">
+        <Link href="/products/automated-lead-generator" className="inline-block text-blue-600 hover:underline">
           ← Try Again
         </Link>
       </div>
