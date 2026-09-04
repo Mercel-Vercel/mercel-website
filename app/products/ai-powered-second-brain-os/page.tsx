@@ -1,13 +1,13 @@
 import Link from "next/link";
 
-export default function AIPoweredSecondBrainEbookPage() {
+export default function AIPoweredSecondBrainOSPage() {
   return (
     <main className="min-h-screen bg-[#fbfbfb] py-16">
       <div className="max-w-4xl mx-auto px-4">
         <Link href="/products" className="text-blue-600 hover:underline mb-8 inline-block">
           ← Back to Products
         </Link>
-        <h1 className="text-4xl font-bold text-gray-900 mb-4">The AI-Powered Second Brain</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-4">The AI-Powered Second-BrainOS</h1>
         <p className="text-xl text-gray-600 mb-8">A Complete Guide to Building Your Own Private Knowledge System with Local AI.</p>
         
         <div className="bg-white rounded-xl border border-gray-200 p-8 shadow-sm">
