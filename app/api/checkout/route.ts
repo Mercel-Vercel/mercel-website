@@ -4,6 +4,12 @@ const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY!;
 
 export async function POST(request: NextRequest) {
   try {
+    const { productName, description, amount, successUrl, cancelUrl } = await request.json();
+
+    if (!productName || !amount || !successUrl || !cancelUrl) {
+      return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
+    }
+
     const stripe = require("stripe")(STRIPE_SECRET_KEY);
 
     const session = await stripe.checkout.sessions.create({
@@ -14,16 +20,16 @@ export async function POST(request: NextRequest) {
           price_data: {
             currency: "usd",
             product_data: {
-              name: "Automate Bookkeeping with Local AI",
-              description: "Comprehensive guide to building your own local AI bookkeeping system.",
+              name: productName,
+              description: description || "",
             },
-            unit_amount: 2700, // $27.00 in cents
+            unit_amount: amount, // Price in cents (e.g., 2700 = $27.00)
           },
           quantity: 1,
         },
       ],
-      success_url: `${process.env.NEXT_PUBLIC_SITE_URL}/products/automate-bookkeeping-with-local-ai/success?session_id={CHECKOUT_SESSION_ID}`,
-      cancel_url: `${process.env.NEXT_PUBLIC_SITE_URL}/products/automate-bookkeeping-with-local-ai`,
+      success_url: successUrl,
+      cancel_url: cancelUrl,
     });
 
     return NextResponse.json({ url: session.url });
