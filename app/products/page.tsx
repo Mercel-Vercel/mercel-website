@@ -72,7 +72,7 @@ const products = [
   },
   {
     title: "AI-Powered Second-BrainOS",
-    description: "Ebook + App bundle. Learn the Second Brain methodology and get a working knowledge management app with optional local AI. All data stays on your devices.",
+    description: "A comprehensive guide to building your own private knowledge system with local AI. Capture, organize, distill, and express using the CODE method. No cloud required.",
     price: 45,
     link: "/products/ai-powered-second-brain-os",
   },
