@@ -27,7 +27,7 @@ export default function AutomateBookkeepingWithLocalAIPage() {
       else throw new Error("No checkout URL returned");
     } catch (error) {
       console.error(error);
-      alert(error.message);
+      alert(error instanceof Error ? error.message : "Something went wrong");
       setLoading(false);
     }
   };
