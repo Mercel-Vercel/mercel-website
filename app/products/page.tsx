@@ -71,10 +71,10 @@ const products = [
     link: "/products/automated-lead-generator",
   },
   {
-    title: "AI-Powered Lead Qualification System",
-    description: "Step-by-step guide to building an automated lead scoring and response system.",
-    price: 9,
-    link: "/products/ai-lead-qualification",
+    title: "AI-Powered Second-BrainOS",
+    description: "The complete Second Brain system: Ebook + Ready-to-Use App & Template. Capture, organize, and express your knowledge with optional local AI. No cloud required.",
+    price: 45,
+    link: "/products/ai-powered-second-brain-os",
   },
   {
     title: "Automate Bookkeeping with Local AI",
