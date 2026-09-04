@@ -77,7 +77,7 @@ const products = [
     link: "/products/ai-powered-second-brain-os",
   },
   {
-    title: "Automate Bookkeeping with Local AI",
+    title: "Automate Bookkeeping w/ Local AI",
     description: "A comprehensive guide to building your own private, tax-ready financial system. Replace QuickBooks and ChatGPT with a local AI solution that keeps your data on your hardware.",
     price: 27,
     link: "/products/automate-bookkeeping-with-local-ai",
