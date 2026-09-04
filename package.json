@@ -23,6 +23,7 @@
     "resend": "^2.0.0",
     "tailwind-merge": "^2.5.4",
     "tailwindcss-animate": "^1.0.7"
+    "stripe": "^17.0.0"
   },
   "devDependencies": {
     "@types/node": "^20",
