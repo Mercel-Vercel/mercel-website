@@ -3,29 +3,31 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export default function BookkeepingProductPage() {
-  const [loading, setLoading] = useState(false);
-
-  const handleCheckout = async () => {
-    setLoading(true);
+const handleCheckout = async () => {
+  setLoading(true);
+  try {
     const response = await fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
         productName: "Automate Bookkeeping with Local AI",
-        description: "Comprehensive guide to building your own local AI bookkeeping system.",
+        description: "A Comprehensive Guide to Building Your Own Private, Tax-Ready Financial System.",
         amount: 2700, // $27.00 in cents
         successUrl: `${window.location.origin}/products/automate-bookkeeping-with-local-ai/success?session_id={CHECKOUT_SESSION_ID}`,
         cancelUrl: `${window.location.origin}/products/automate-bookkeeping-with-local-ai`,
       }),
     });
+
     const data = await response.json();
-    if (data.url) {
-      window.location.href = data.url;
-    } else {
-      setLoading(false);
-    }
-  };
+    if (!response.ok) throw new Error(data.error || "Checkout failed");
+    if (data.url) window.location.href = data.url;
+    else throw new Error("No checkout URL returned");
+  } catch (error) {
+    console.error(error);
+    alert(error.message);
+    setLoading(false);
+  }
+};
 
   return (
     <main className="min-h-screen bg-[#fbfbfb] py-16">
