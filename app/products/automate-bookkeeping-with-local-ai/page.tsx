@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 
-export default function AutomateBookkeepingWithLocalAIPage() {
+export default function BookkeepingProductPage() {
   const [loading, setLoading] = useState(false);
 
   const handleCheckout = async () => {
@@ -11,6 +11,13 @@ export default function AutomateBookkeepingWithLocalAIPage() {
     const response = await fetch("/api/checkout", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        productName: "Automate Bookkeeping with Local AI",
+        description: "Comprehensive guide to building your own local AI bookkeeping system.",
+        amount: 2700, // $27.00 in cents
+        successUrl: `${window.location.origin}/products/automate-bookkeeping-with-local-ai/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancelUrl: `${window.location.origin}/products/automate-bookkeeping-with-local-ai`,
+      }),
     });
     const data = await response.json();
     if (data.url) {
@@ -38,7 +45,7 @@ export default function AutomateBookkeepingWithLocalAIPage() {
             disabled={loading}
             className="block w-full text-center rounded-lg bg-blue-600 px-6 py-4 text-lg font-semibold text-white hover:bg-blue-700 disabled:bg-gray-400"
           >
-            {loading ? "Redirecting..." : "Buy Now with Stripe"}
+            {loading ? "Redirecting..." : "Buy Now"}
           </button>
         </div>
         
@@ -47,12 +54,12 @@ export default function AutomateBookkeepingWithLocalAIPage() {
           <ul className="list-disc pl-5 text-gray-600">
             <li>Complete 16-chapter guide (7,000+ words)</li>
             <li>How to import a tax-trained LLM into Ollama</li>
-            <li>Deploy TaxHacker without Docker (native installation)</li>
+            <li>Deploy TaxHacker without Docker</li>
             <li>Connect your local AI to your bookkeeping system</li>
             <li>Enhance with OpenClaw and MAi-RAG-PA</li>
             <li>Customize AI prompts for your business</li>
             <li>Complete workflow: receipt to tax report</li>
-            <li>Security, compliance, and troubleshooting guidance</li>
+            <li>Security and troubleshooting guidance</li>
           </ul>
         </div>
       </div>
