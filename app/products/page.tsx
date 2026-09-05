@@ -90,9 +90,9 @@ const products = [
   },
   {
     title: "Data Enrichment Playbook for B2B Lead Gen",
-    description: "How to enrich your lead lists with AI-assisted data processing.",
-    price: 19,
-    link: "/products/data-enrichment-playbook",
+    description: "How to enrich your lead lists with AI-assisted data processing. A comprehensive guide to improving lead quality, conversion rates, and revenue.",
+    price: 27,
+    link: "/products/data-enrichment-playbook-b2b-lead-gen",
   },
   {
     title: "Build Your Own Local RAG Engine",
