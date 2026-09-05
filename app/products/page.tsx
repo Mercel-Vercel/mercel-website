@@ -84,9 +84,9 @@ const products = [
   },
   {
     title: "Custom AI Agent Setup Guide",
-    description: "From scratch: Build a custom AI agent that knows your business.",
-    price: 19,
-    link: "/products/custom-ai-agent-setup",
+    description: "From scratch: Build a custom AI agent that knows your business. A complete step-by-step guide to creating, training, and deploying your own local AI assistant.",
+    price: 27,
+    link: "/products/custom-ai-agent-setup-guide",
   },
   {
     title: "Data Enrichment Playbook for B2B Lead Gen",
