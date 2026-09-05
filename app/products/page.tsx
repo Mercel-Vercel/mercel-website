@@ -83,10 +83,10 @@ const products = [
     link: "/products/automate-bookkeeping-with-local-ai",
   },
   {
-    title: "Custom AI Agent Setup Guide",
-    description: "From scratch: Build a custom AI agent that knows your business. A complete step-by-step guide to creating, training, and deploying your own local AI assistant.",
+    title: "Build Custom AI Agents Without Code",
+    description: "Learn how to create powerful AI agents with drag-and-drop simplicity. No coding required.",
     price: 27,
-    link: "/products/custom-ai-agent-setup-guide",
+    link: "/products/build-custom-ai-agents-without-code",
   },
   {
     title: "Data Enrichment Playbook for B2B Lead Gen",
@@ -95,10 +95,10 @@ const products = [
     link: "/products/data-enrichment-playbook",
   },
   {
-    title: "RAG Pipeline Architecture for Business",
-    description: "Advanced guide to building retrieval-augmented generation systems for your data.",
-    price: 27,
-    link: "/products/rag-pipeline-architecture",
+    title: "Build Your Own Local RAG Engine",
+    description: "A complete guide to creating a private AI knowledge base on your own hardware. Includes Streamlit web interface and LlamaIndex integration.",
+    price: 18,
+    link: "/products/build-your-own-local-rag-engine",
   },
   {
     title: "Next.js Starter Template",
