@@ -57,7 +57,7 @@ export default function BuildYourOwnLocalRAGEnginePage() {
         <div className="mt-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">What's Inside</h2>
           <ul className="list-disc pl-5 text-gray-600">
-            <li>Complete 14-chapter guide (7,000+ words)</li>
+            <li>Complete 14-chapter guide</li>
             <li>How to install Ollama and pull models</li>
             <li>Setting up SQLite or Qdrant for vector storage</li>
             <li>Building a document loader for PDFs, Markdown, and text</li>
