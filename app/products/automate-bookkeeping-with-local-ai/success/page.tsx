@@ -17,7 +17,7 @@ export default function AutomateBookkeepingWithLocalAiSuccessPage() {
         .then((data) => {
           if (data.verified) {
             setStatus("verified");
-            setDownloadUrl("/Automate-Bookkeeping-with-Local-AI.pdf");
+            setDownloadUrl("/Automate-Bookeeping-with-Local-Ai.pdf");
           } else {
             setStatus("failed");
           }
