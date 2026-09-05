@@ -57,7 +57,7 @@ export default function AutomateBookkeepingWithLocalAIPage() {
         <div className="mt-8">
           <h2 className="text-2xl font-bold text-gray-900 mb-4">What's Inside</h2>
           <ul className="list-disc pl-5 text-gray-600">
-            <li>Complete 16-chapter guide (7,000+ words)</li>
+            <li>Complete 16-chapter guide</li>
             <li>How to import a tax-trained LLM into Ollama</li>
             <li>Deploy TaxHacker without Docker</li>
             <li>Connect your local AI to your bookkeeping system</li>
