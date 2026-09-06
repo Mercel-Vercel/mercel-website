@@ -109,7 +109,7 @@ const products = [
   {
     title: "The Local AI Toolkit for Small Business",
     description: "Ready-to-use scripts, templates, and guides for leveraging local AI in your business. No technical background required.",
-    price: 15,
+    price: 18,
     link: "/products/local-ai-toolkit",
   },
   {
