@@ -42,7 +42,7 @@ export default function LocalAIToolkitPage() {
         <p className="text-xl text-gray-600 mb-8">Ready-to-Use Tools for Leveraging Local AI in Your Business.</p>
         
         <div className="bg-white rounded-xl border border-gray-200 p-8 shadow-sm">
-          <p className="text-3xl font-bold text-gray-900 mb-4">$15.00</p>
+          <p className="text-3xl font-bold text-gray-900 mb-4">$18.00</p>
           <p className="text-gray-600 mb-6">Instant download. PDF format.</p>
           
           <button
