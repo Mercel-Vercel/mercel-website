@@ -96,7 +96,7 @@ const products = [
   },
   {
     title: "Build Your Own Local RAG Engine",
-    description: "A complete guide to creating a private AI knowledge base on your own hardware. Includes Streamlit web interface and LlamaIndex integration.",
+    description: "A complete guide to creating a private AI knowledge base on your own hardware. Includes all the tools you need to get up and running.",
     price: 18,
     link: "/products/build-your-own-local-rag-engine",
   },
