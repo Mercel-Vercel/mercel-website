@@ -101,21 +101,21 @@ const products = [
     link: "/products/build-your-own-local-rag-engine",
   },
   {
-    title: "Next.js Starter Template",
-    description: "Production-ready template with auth, payments, and SEO optimization.",
-    price: 15,
-    link: "/products/nextjs-starter-template",
-  },
-  {
-    title: "AI Prompt Library (500+ Prompts)",
-    description: "Curated, tested prompts for business automation and content creation.",
+    title: "The AI Automation Starter Kit",
+    description: "A practical toolkit for automating your business with local AI. Includes templates, prompts, and workflow ideas for beginners.",
     price: 9,
-    link: "/products/ai-prompt-library",
+    link: "/products/ai-automation-starter-kit",
   },
   {
-    title: "Business Process Automation Checklist",
-    description: "Identify and prioritize automation opportunities in your business.",
+    title: "The Local AI Toolkit for Small Business",
+    description: "Ready-to-use scripts, templates, and guides for leveraging local AI in your business. No technical background required.",
+    price: 15,
+    link: "/products/local-ai-toolkit",
+  },
+  {
+    title: "The Privacy-First Lead Generation Checklist",
+    description: "A step-by-step checklist for building a privacy-first lead generation system. Capture, qualify, and nurture leads without compromising data.",
     price: 3,
-    link: "/products/automation-checklist",
+    link: "/products/privacy-first-lead-gen-checklist",
   },
 ];
