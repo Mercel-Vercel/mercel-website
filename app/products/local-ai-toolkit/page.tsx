@@ -15,7 +15,7 @@ export default function LocalAIToolkitPage() {
         body: JSON.stringify({
           productName: "The Local AI Toolkit for Small Business",
           description: "Ready-to-use scripts, templates, and guides for leveraging local AI in your business.",
-          amount: 1500, // $15.00 in cents
+          amount: 1800, // $18.00 in cents
           successUrl: `${window.location.origin}/products/local-ai-toolkit/success?session_id={CHECKOUT_SESSION_ID}`,
           cancelUrl: `${window.location.origin}/products/local-ai-toolkit`,
         }),
