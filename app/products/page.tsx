@@ -84,12 +84,12 @@ const products = [
   },
   {
     title: "Build Custom AI Agents Without Code",
-    description: "Learn how to create powerful AI agents with drag-and-drop simplicity. No coding required.",
+    description: "Learn how to create your own powerful AI agents with simplicity. No coding required!",
     price: 27,
     link: "/products/build-custom-ai-agents-without-code",
   },
   {
-    title: "Data Enrichment Playbook for B2B Lead Gen",
+    title: "Data Enrichment Playbook for B2B Lead Generation",
     description: "How to enrich your lead lists with AI-assisted data processing. A comprehensive guide to improving lead quality, conversion rates, and revenue.",
     price: 27,
     link: "/products/data-enrichment-playbook-b2b-lead-gen",
