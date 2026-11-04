@@ -1,2 +1,2 @@
-# mercel-website
+# mercel-website.
 Mercel-Vercel.Vercel.app
