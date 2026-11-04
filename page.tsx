@@ -158,10 +158,10 @@ export default function Home() {
                   hardware. No cloud. No subscriptions.
                 </p>
                 <ul className="mt-6 space-y-2 text-sm text-gray-700">
-                  <li className="flex gap-2"><span className="text-blue-600">✓</span> Fine-tuned datasets engineered for retrieval</li>
-                  <li className="flex gap-2"><span className="text-blue-600">✓</span> Hallucination defense &amp; conditional citations</li>
-                  <li className="flex gap-2"><span className="text-blue-600">✓</span> Model matching for your workload &amp; hardware</li>
-                  <li className="flex gap-2"><span className="text-blue-600">✓</span> Role-scoped memory — no cross-contamination</li>
+                  <li className="flex gap-2"><span className="text-blue-600">✓</span> Fine-tuned datasets engineered for retrieval.</li>
+                  <li className="flex gap-2"><span className="text-blue-600">✓</span> Hallucination defense &amp; conditional citations.</li>
+                  <li className="flex gap-2"><span className="text-blue-600">✓</span> Model matching for your workload &amp; hardware.</li>
+                  <li className="flex gap-2"><span className="text-blue-600">✓</span> Role-scoped memory — no cross-contamination.</li>
                 </ul>
                 <div className="mt-8 flex flex-wrap gap-4">
                   <Link
