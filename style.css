@@ -1,0 +1,150 @@
+/* ============ Mercel — Freelance Local AI Automation ============ */
+:root {
+  --bg: #fbfbfb;
+  --card: #ffffff;
+  --text: #1f2937;
+  --muted: #6b7280;
+  --border: #e5e7eb;
+  --blue: #2563eb;
+  --blue-dark: #1d4ed8;
+  --gray: #6b7280;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* ---------- NAVBAR ---------- */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  border-bottom: 1px solid var(--border);
+  background: rgba(251, 251, 251, 0.8);
+  backdrop-filter: blur(8px);
+}
+.navbar-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navbar-logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
+}
+.navbar-logo span { color: var(--blue); }
+.navbar-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none;
+}
+.navbar-links a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.navbar-links a:hover { color: var(--blue); }
+
+@media (max-width: 768px) {
+  .navbar-links { display: none; }
+}
+
+/* ---------- BUTTONS ---------- */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+}
+.btn-primary { background: var(--blue); color: #fff; }
+.btn-primary:hover { background: var(--blue-dark); }
+.btn-outline { background: #fff; color: var(--gray); border: 1px solid var(--border); }
+
+/* ---------- SECTIONS ---------- */
+.section { padding: 4rem 1.5rem; }
+.section-light { background: #f9fafb; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+.container { max-width: 1100px; margin: 0 auto; }
+
+/* ---------- HERO ---------- */
+.hero { padding: 6rem 1.5rem 4rem; text-align: center; }
+.hero h1 { font-size: 3rem; font-weight: 700; letter-spacing: -0.02em; margin-bottom: 1rem; }
+.hero h1 .highlight { color: var(--blue); }
+.hero p { font-size: 1.2rem; color: var(--muted); max-width: 680px; margin: 0 auto 2rem; }
+.hero-buttons { display: flex; gap: 1rem; justify-content: center; }
+
+/* ---------- TYPOGRAPHY ---------- */
+h1, h2, h3 { font-weight: 700; letter-spacing: -0.02em; }
+.section-title { font-size: 2.25rem; text-align: center; margin-bottom: 0.5rem; }
+.section-sub { text-align: center; color: var(--muted); max-width: 600px; margin: 0 auto 3rem; }
+
+/* ---------- SERVICES ---------- */
+.service-card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 1rem;
+  padding: 2rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.03);
+}
+.service-header { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 0.25rem; }
+.service-header h2 { font-size: 1.5rem; }
+.service-price { font-size: 1.5rem; font-weight: 700; color: var(--blue); }
+.service-time { font-size: 0.8rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; margin-bottom: 0.75rem; }
+.service-desc { color: #374151; margin-bottom: 1rem; }
+.service-tags { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.tag {
+  background: #eff6ff;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--blue-dark);
+}
+
+/* ---------- PROOF ---------- */
+.proof { text-align: center; }
+.proof-buttons { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+.proof-link { background: var(--blue); color: #fff; padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+.proof-link-outline { background: #fff; color: var(--gray); border: 1px solid var(--border); padding: 0.75rem 1.5rem; border-radius: 0.5rem; text-decoration: none; font-size: 0.9rem; font-weight: 600; }
+
+/* ---------- ABOUT ---------- */
+.about-content { max-width: 760px; margin: 0 auto; }
+.about-content h2 { font-size: 2.25rem; text-align: center; margin-bottom: 1.5rem; }
+.about-content p { color: #374151; margin-bottom: 1.25rem; }
+
+/* ---------- CONTACT ---------- */
+.contact-box { max-width: 680px; margin: 0 auto; background: var(--card); border: 1px solid var(--border); border-radius: 1rem; padding: 2.5rem; box-shadow: 0 1px 2px rgba(0,0,0,0.03); }
+.contact-box h2 { font-size: 2rem; text-align: center; margin-bottom: 0.75rem; }
+.contact-box p { text-align: center; color: var(--muted); margin-bottom: 2rem; }
+.pay-info { background: #f9fafb; border: 1px solid var(--border); border-radius: 0.75rem; padding: 1.5rem; margin-top: 2rem; text-align: center; }
+.pay-info h3 { font-size: 1.1rem; margin-bottom: 0.75rem; }
+.pay-info p { color: var(--muted); font-size: 0.9rem; }
+
+/* ---------- FOOTER ---------- */
+.footer { border-top: 1px solid var(--border); background: var(--bg); padding: 2.5rem 1.5rem; text-align: center; }
+.footer a { color: var(--blue); text-decoration: none; font-size: 0.9rem; font-weight: 500; }
+.footer-social { display: flex; gap: 1.5rem; justify-content: center; margin-top: 1.5rem; }
+
+/* ---------- TRUST / STATS ---------- */
+.stats { display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap; }
+.stat { text-align: center; }
+.stat-number { font-size: 2.5rem; font-weight: 700; color: var(--blue); }
+.stat-label { color: var(--muted); font-size: 0.9rem; }
