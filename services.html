@@ -51,27 +51,29 @@
     <div class="container">
       <h2 class="section-title">How We Work Together</h2>
       <p class="section-sub">A simple, transparent process from first contact to launch.</p>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem; margin-bottom: 3rem;">
-        <div style="background: var(--card); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; position: relative;">
-          <span style="position: absolute; top: -12px; left: 20px; background: var(--blue); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px;">Step 1</span>
-          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Free Consultation</h3>
-          <p style="color: var(--muted); font-size: 0.95rem;">We discuss your business, goals, customers, and the results you want to achieve. No pressure — just a conversation.</p>
-        </div>
-        <div style="background: var(--card); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; position: relative;">
-          <span style="position: absolute; top: -12px; left: 20px; background: var(--blue); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px;">Step 2</span>
-          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Custom Proposal</h3>
-          <p style="color: var(--muted); font-size: 0.95rem;">You receive a clear plan with recommended services, timeline, and pricing. No hidden fees, no vague estimates.</p>
-        </div>
-        <div style="background: var(--card); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; position: relative;">
-          <span style="position: absolute; top: -12px; left: 20px; background: var(--blue); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px;">Step 3</span>
-          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Build &amp; Review</h3>
-          <p style="color: var(--muted); font-size: 0.95rem;">I create your website or deliver your service, then we review it together. Your feedback shapes the final result.</p>
-        </div>
-        <div style="background: var(--card); border: 1px solid var(--border); border-radius: 1rem; padding: 1.5rem; position: relative;">
-          <span style="position: absolute; top: -12px; left: 20px; background: var(--blue); color: #fff; font-size: 0.8rem; font-weight: 700; padding: 0.25rem 0.75rem; border-radius: 9999px;">Step 4</span>
-          <h3 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Launch &amp; Support</h3>
-          <p style="color: var(--muted); font-size: 0.95rem;">Your project goes live, and ongoing support is available if you need it. You're never left on your own.</p>
-        </div>
+      <div style="max-width: 800px; margin: 0 auto;">
+        <ol style="list-style: none; counter-reset: step; display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 3rem;">
+          <li style="counter-increment: step; padding-left: 2.5rem; position: relative;">
+            <span style="position: absolute; left: 0; top: 0; width: 1.75rem; height: 1.75rem; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.9rem;">1</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.25rem;">Free Consultation</h3>
+            <p style="color: var(--muted);">We discuss your business, goals, customers, and the results you want to achieve. No pressure — just a conversation.</p>
+          </li>
+          <li style="counter-increment: step; padding-left: 2.5rem; position: relative;">
+            <span style="position: absolute; left: 0; top: 0; width: 1.75rem; height: 1.75rem; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.9rem;">2</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.25rem;">Custom Proposal</h3>
+            <p style="color: var(--muted);">You receive a clear plan with recommended services, timeline, and pricing. No hidden fees, no vague estimates — 50% deposit via Wise or Swift to start.</p>
+          </li>
+          <li style="counter-increment: step; padding-left: 2.5rem; position: relative;">
+            <span style="position: absolute; left: 0; top: 0; width: 1.75rem; height: 1.75rem; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.9rem;">3</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.25rem;">Build &amp; Review</h3>
+            <p style="color: var(--muted);">I create your website or deliver your service, then we review it together. Your feedback shapes the final result — remaining 50% via Wise or Swift to complete payment.</p>
+          </li>
+          <li style="counter-increment: step; padding-left: 2.5rem; position: relative;">
+            <span style="position: absolute; left: 0; top: 0; width: 1.75rem; height: 1.75rem; background: var(--blue); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-weight: 700; font-size: 0.9rem;">4</span>
+            <h3 style="font-size: 1.25rem; margin-bottom: 0.25rem;">Launch &amp; Support</h3>
+            <p style="color: var(--muted);">Your project goes live, and ongoing support is available if you need it. You're never left on your own.</p>
+          </li>
+        </ol>
       </div>
     </div>
   </section>
